@@ -42,4 +42,89 @@ fn main() {
         "December",
     ];
     println!("{}", months[0]);
+
+    one_function();
+
+    another_function(5, 8);
+
+    println!("The value of x is: {}", five());
+
+    println!("The value of x is: {}", plus_one(0));
+
+    let number = 3;
+
+    if number < 5 {
+        println!("condition was true");
+    } else {
+        println!("condition was false");
+    }
+
+    let condition = false;
+    let number = if condition { 5 } else { 6 };
+    println!("The value of number is: {}", number);
+
+    loop_function();
+
+    while_function();
+
+    for_function();
+}
+
+fn another_function(x: i32, y: i32) {
+    println!("The value of x is: {}", x);
+    println!("The value of y is: {}", y);
+}
+
+fn one_function() {
+    let y = {
+        let x = 3;
+        x + 1
+    };
+
+    println!("The value of y is: {}", y);
+}
+
+fn five() -> i32 {
+    5
+}
+
+fn plus_one(x: i32) -> i32 {
+    x + 1
+}
+
+fn loop_function() {
+    let mut counter = 0;
+
+    let result = loop {
+        counter += 1;
+
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
+
+    println!("The result is {}", result);
+}
+
+fn while_function() {
+    let mut number = 3;
+
+    while number != 0 {
+        println!("{}", number);
+        number -= 1
+    }
+    println!("LIFTOFF!!!");
+}
+
+fn for_function() {
+    let a = [10, 20, 30, 40, 50];
+
+    for element in a.iter() {
+        println!("the value is: {}", element);
+    }
+
+    for number in (1..4).rev() {
+        println!("{}!", number);
+    }
+    println!("LIFTOFF!!!");
 }
