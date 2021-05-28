@@ -1,3 +1,4 @@
+use rand::{thread_rng, Rng};
 use std::thread;
 use std::time::Duration;
 
@@ -32,7 +33,15 @@ fn generate_workout(intensity: u32, random_number: u32) {
 
 fn main() {
     let simulated_user_specified_value = 10;
-    let simulated_random_number = 7;
+    // let simulated_random_numbe = rng.gen_range(0..10);
 
-    generate_workout(simulated_user_specified_value, simulated_random_number);
+    let mut rng = thread_rng();
+    generate_workout(simulated_user_specified_value, rng.gen_range(0..10));
+
+    // 创建一个迭代器
+    let v1 = vec![1, 2, 3];
+    let v1_iter = v1.iter();
+    for val in v1_iter {
+        println!("Got: {}", val);
+    }
 }
